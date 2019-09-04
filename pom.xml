@@ -18,7 +18,7 @@
     <properties>
         <java.source>1.8</java.source>
         <java.target>1.8</java.target>
-        <dubbo.version>2.7.2</dubbo.version>
+        <!--<dubbo.version>2.7.2</dubbo.version>-->
         <netty.version>4.1.25.Final</netty.version>
         <kryo.version>4.0.2</kryo.version>
         <kryo-serializers.version>0.42</kryo-serializers.version>
@@ -40,8 +40,8 @@
         <module>dubbo-hessianlite-server</module>
         <module>dubbo-fst-client</module>
         <module>dubbo-fst-server</module>
-        <module>dubbo-native-hessian-client</module>
-        <module>dubbo-native-hessian-server</module>
+        <!--<module>dubbo-native-hessian-client</module>-->
+        <!--<module>dubbo-native-hessian-server</module>-->
     </modules>
 
     <dependencies>
