@@ -4,6 +4,12 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
+    <parent>
+        <groupId>com.youzan.boot</groupId>
+        <artifactId>youzan-boot-parent</artifactId>
+        <version>2.0.20-RELEASE</version>
+    </parent>
+
     <groupId>org.apache.dubbo</groupId>
     <artifactId>dubbo-benchmark</artifactId>
     <packaging>pom</packaging>
@@ -39,9 +45,14 @@
     </modules>
 
     <dependencies>
+        <!--<dependency>-->
+            <!--<groupId>org.apache.dubbo</groupId>-->
+            <!--<artifactId>dubbo</artifactId>-->
+        <!--</dependency>-->
+
         <dependency>
-            <groupId>org.apache.dubbo</groupId>
-            <artifactId>dubbo</artifactId>
+            <groupId>com.youzan.boot</groupId>
+            <artifactId>youzan-boot-starter-dubbo</artifactId>
         </dependency>
 
         <dependency>
@@ -63,17 +74,17 @@
     <dependencyManagement>
         <dependencies>
             <!-- use netty 4 by default -->
-            <dependency>
-                <groupId>org.apache.dubbo</groupId>
-                <artifactId>dubbo</artifactId>
-                <version>${dubbo.version}</version>
-                <exclusions>
-                    <exclusion>
-                        <groupId>org.jboss.netty</groupId>
-                        <artifactId>netty</artifactId>
-                    </exclusion>
-                </exclusions>
-            </dependency>
+            <!--<dependency>-->
+                <!--<groupId>org.apache.dubbo</groupId>-->
+                <!--<artifactId>dubbo</artifactId>-->
+                <!--<version>${dubbo.version}</version>-->
+                <!--<exclusions>-->
+                    <!--<exclusion>-->
+                        <!--<groupId>org.jboss.netty</groupId>-->
+                        <!--<artifactId>netty</artifactId>-->
+                    <!--</exclusion>-->
+                <!--</exclusions>-->
+            <!--</dependency>-->
 
             <dependency>
                 <groupId>io.netty</groupId>
