@@ -6,7 +6,6 @@
     <context:property-placeholder location="classpath:benchmark.properties" system-properties-mode="OVERRIDE"/>
     <dubbo:application name="dubbo-hessianlite-client"/>
     <dubbo:reference id="userService" check="false"
-                     interface="org.apache.dubbo.benchmark.service.UserService"
-                     url="dubbo://${server.host}:${server.port}"/>
+                     interface="org.apache.dubbo.benchmark.service.UserService" />
     <dubbo:consumer client="netty4" filter="-default"/>
 </beans>
