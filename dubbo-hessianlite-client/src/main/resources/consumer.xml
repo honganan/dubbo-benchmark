@@ -9,5 +9,5 @@
     <dubbo:reference id="demoService1" check="false"
                      interface="com.youzan.platform.demo.api.DemoService1"
                      />
-    <dubbo:consumer client="netty4" filter="-default"/>s
+    <dubbo:consumer client="netty4" filter="-default"/>
 </beans>
