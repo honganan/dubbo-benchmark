@@ -1,5 +1,8 @@
 package org.apache.dubbo.benchmark;
 
+import com.youzan.platform.demo.api.DemoService;
+import com.youzan.platform.demo.api.dto.ResultDTO;
+
 import org.apache.commons.cli.CommandLine;
 import org.apache.commons.cli.CommandLineParser;
 import org.apache.commons.cli.DefaultParser;
@@ -30,17 +33,23 @@ public class Client extends AbstractClient {
     private static final int CONCURRENCY = 32;
 
     private final ClassPathXmlApplicationContext context;
-    private final UserService userService;
+//    private final UserService userService;
+    private final DemoService demoService;
 
     public Client() {
         context = new ClassPathXmlApplicationContext("consumer.xml");
         context.start();
-        userService = (UserService) context.getBean("userService");
+//        userService = (UserService) context.getBean("userService");
+        demoService = (DemoService) context.getBean("demoService");
     }
 
-    @Override
-    protected UserService getUserService() {
-        return userService;
+//    @Override
+//    protected UserService getUserService() {
+//        return userService;
+//    }
+
+    protected DemoService getDemoService() {
+        return demoService;
     }
 
     @TearDown
@@ -49,6 +58,14 @@ public class Client extends AbstractClient {
     }
 
     @Benchmark
+    @BenchmarkMode({Mode.Throughput, Mode.AverageTime, Mode.SampleTime})
+    @OutputTimeUnit(TimeUnit.MILLISECONDS)
+    @Override
+    public ResultDTO findAuthorTopics() throws Exception {
+        return super.findAuthorTopics();
+    }
+
+    /*@Benchmark
     @BenchmarkMode({Mode.Throughput, Mode.AverageTime, Mode.SampleTime})
     @OutputTimeUnit(TimeUnit.MILLISECONDS)
     @Override
@@ -78,7 +95,7 @@ public class Client extends AbstractClient {
     @Override
     public Page<User> listUser() throws Exception {
         return super.listUser();
-    }
+    }*/
 
     public static void main(String[] args) throws Exception {
         System.out.println(args);

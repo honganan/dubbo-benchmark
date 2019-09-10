@@ -11,5 +11,12 @@
 
     <artifactId>benchmark-base</artifactId>
 
+    <dependencies>
+        <dependency>
+            <groupId>com.youzan.platform</groupId>
+            <artifactId>demo-api</artifactId>
+            <version>1.0.0-SNAPSHOT</version>
+        </dependency>
+    </dependencies>
 
 </project>

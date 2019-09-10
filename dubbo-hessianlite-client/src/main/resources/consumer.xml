@@ -6,8 +6,8 @@
     <context:property-placeholder location="classpath:benchmark.properties" system-properties-mode="OVERRIDE"/>
     <dubbo:application name="dubbo-hessianlite-client"/>
     <dubbo:registry protocol="etcd3" address="etcd-kvstore-qa0.s.qima-inc.com:2379,etcd-kvstore-qa1.s.qima-inc.com:2379,etcd-kvstore-qa2.s.qima-inc.com:2379"/>
-    <dubbo:reference id="userService" check="false"
-                     interface="org.apache.dubbo.benchmark.service.UserService"
+    <dubbo:reference id="demoService" check="false"
+                     interface="com.youzan.platform.demo.api.DemoService"
                      />
     <dubbo:consumer client="netty4" filter="-default"/>
 </beans>
