@@ -1,14 +1,8 @@
 package org.apache.dubbo.benchmark.rpc;
 
-import com.youzan.platform.demo.api.DemoService;
+import com.youzan.platform.demo.api.DemoService1;
 import com.youzan.platform.demo.api.dto.ResultDTO;
 
-import org.apache.dubbo.benchmark.bean.Page;
-import org.apache.dubbo.benchmark.bean.User;
-import org.apache.dubbo.benchmark.service.UserService;
-import org.apache.dubbo.benchmark.service.UserServiceServerImpl;
-
-import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.atomic.AtomicLong;
 
 public abstract class AbstractClient {
@@ -17,7 +11,7 @@ public abstract class AbstractClient {
 //    private final UserService _serviceUserService = new UserServiceServerImpl();
 
 //    protected abstract UserService getUserService();
-    protected abstract DemoService getDemoService();
+    protected abstract DemoService1 getDemoService();
 
 
     public ResultDTO findAuthorTopics() throws Exception {
