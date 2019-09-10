@@ -1,16 +1,16 @@
 package org.apache.dubbo.benchmark;
 
-import com.youzan.platform.demo.api.DemoService;
+import com.youzan.platform.demo.api.DemoService1;
 import com.youzan.platform.demo.api.dto.ResultDTO;
+
+import java.io.IOException;
+import java.util.concurrent.TimeUnit;
 
 import org.apache.commons.cli.CommandLine;
 import org.apache.commons.cli.CommandLineParser;
 import org.apache.commons.cli.DefaultParser;
 import org.apache.commons.cli.Option;
-import org.apache.dubbo.benchmark.bean.Page;
-import org.apache.dubbo.benchmark.bean.User;
 import org.apache.dubbo.benchmark.rpc.AbstractClient;
-import org.apache.dubbo.benchmark.service.UserService;
 import org.openjdk.jmh.annotations.Benchmark;
 import org.openjdk.jmh.annotations.BenchmarkMode;
 import org.openjdk.jmh.annotations.Mode;
@@ -25,22 +25,19 @@ import org.openjdk.jmh.runner.options.OptionsBuilder;
 import org.openjdk.jmh.runner.options.TimeValue;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-import java.io.IOException;
-import java.util.concurrent.TimeUnit;
-
 @State(Scope.Benchmark)
 public class Client extends AbstractClient {
     private static final int CONCURRENCY = 32;
 
     private final ClassPathXmlApplicationContext context;
 //    private final UserService userService;
-    private final DemoService demoService;
+    private final DemoService1 demoService1;
 
     public Client() {
         context = new ClassPathXmlApplicationContext("consumer.xml");
         context.start();
 //        userService = (UserService) context.getBean("userService");
-        demoService = (DemoService) context.getBean("demoService");
+        demoService1 = (DemoService1) context.getBean("demoService1");
     }
 
 //    @Override
@@ -48,8 +45,8 @@ public class Client extends AbstractClient {
 //        return userService;
 //    }
 
-    protected DemoService getDemoService() {
-        return demoService;
+    protected DemoService1 getDemoService1() {
+        return demoService1;
     }
 
     @TearDown

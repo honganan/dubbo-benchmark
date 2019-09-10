@@ -11,12 +11,12 @@ public abstract class AbstractClient {
 //    private final UserService _serviceUserService = new UserServiceServerImpl();
 
 //    protected abstract UserService getUserService();
-    protected abstract DemoService1 getDemoService();
+    protected abstract DemoService1 getDemoService1();
 
 
     public ResultDTO findAuthorTopics() throws Exception {
         Long authorId = counter.incrementAndGet();
-        return getDemoService().findAuthorTopics(authorId);
+        return getDemoService1().findAuthorTopics(authorId);
     }
 
     /*public boolean existUser() throws Exception {
