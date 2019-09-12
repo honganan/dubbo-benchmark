@@ -18,6 +18,11 @@
             <version>${project.version}</version>
         </dependency>
 
+        <dependency>
+            <groupId>com.youzan.aladdin</groupId>
+            <artifactId>container</artifactId>
+            <version>1.2.8-RELEASE</version>
+        </dependency>
         <!--<dependency>-->
             <!--<groupId>org.apache.dubbo</groupId>-->
             <!--<artifactId>dubbo</artifactId>-->
