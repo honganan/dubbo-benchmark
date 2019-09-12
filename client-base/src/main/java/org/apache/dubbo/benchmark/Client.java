@@ -109,7 +109,7 @@ public class Client extends AbstractClient {
 
         int warmupIterations = Integer.valueOf(line.getOptionValue("warmupIterations", "3"));
         int warmupTime = Integer.valueOf(line.getOptionValue("warmupTime", "10"));
-        int measurementIterations = Integer.valueOf(line.getOptionValue("measurementIterations", "3"));
+        int measurementIterations = Integer.valueOf(line.getOptionValue("measurementIterations", "30"));
         int measurementTime = Integer.valueOf(line.getOptionValue("measurementTime", "10"));
 
         Options opt;
