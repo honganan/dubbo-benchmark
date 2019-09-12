@@ -4,9 +4,12 @@
        xmlns:context="http://www.springframework.org/schema/context"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://code.alibabatech.com/schema/dubbo http://code.alibabatech.com/schema/dubbo/dubbo.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
     <context:property-placeholder location="classpath:benchmark.properties" system-properties-mode="OVERRIDE"/>
-    <dubbo:application name="dubbo-hessianlite-client"/>
-    <dubbo:registry protocol="etcd3" address="etcd-kvstore-qa0.s.qima-inc.com:2379,etcd-kvstore-qa1.s.qima-inc.com:2379,etcd-kvstore-qa2.s.qima-inc.com:2379"/>
-    <dubbo:reference id="userService" check="false"
-                     interface="org.apache.dubbo.benchmark.service.UserService" />
+    <dubbo:application name="dubbo-hessianlite-server"/>
+    <dubbo:protocol name="dubbo" host="${server.host}" server="netty4" port="${server.port}"/>
+    <!--<dubbo:registry address="N/A"/>-->
+    <!--<dubbo:service interface="org.apache.dubbo.benchmark.service.UserService" ref="userService" filter="-default"/>-->
+    <!--<bean id="userService" class="org.apache.dubbo.benchmark.service.UserServiceServerImpl"/>-->
+    <dubbo:reference id="demoService" check="false"
+                     interface="com.youzan.platform.demo.api.DemoService1" />
     <dubbo:consumer client="netty4" filter="-default"/>
 </beans>
