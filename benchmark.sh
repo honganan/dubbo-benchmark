@@ -18,7 +18,7 @@ build() {
         mvn clean install
         popd
     fi
-    mvn --projects benchmark-base,client-base,server-base,${PROJECT_DIR} clean package
+    mvn --projects benchmark-api,benchmark-base,client-base,server-base,${PROJECT_DIR} clean package
 }
 
 java_options() {
