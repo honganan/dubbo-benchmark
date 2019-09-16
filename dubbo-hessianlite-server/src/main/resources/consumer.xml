@@ -7,6 +7,7 @@
     <dubbo:application name="dubbo-hessianlite-server"/>
     <dubbo:protocol name="dubbo" host="${server.host}" server="netty4" port="${server.port}"/>
     <!--<dubbo:registry address="N/A"/>-->
+    <dubbo:registry protocol="etcd3" address="etcd-kvstore-qa0.s.qima-inc.com:2379,etcd-kvstore-qa1.s.qima-inc.com:2379,etcd-kvstore-qa2.s.qima-inc.com:2379" total="false"/>
     <!--<dubbo:service interfaorg.apache.dubbo.benchmark.api.service.UserServicevice" ref="userService" filter="-default"/>-->
     <!--<bean id="userService" class="org.apache.dubbo.benchmark.service.UserServiceServerImpl"/>-->
     <dubbo:reference id="demoService" check="false"
