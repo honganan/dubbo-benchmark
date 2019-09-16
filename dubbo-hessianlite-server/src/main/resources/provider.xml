@@ -9,7 +9,7 @@
     <dubbo:registry protocol="etcd3" address="etcd-kvstore-qa0.s.qima-inc.com:2379,etcd-kvstore-qa1.s.qima-inc.com:2379,etcd-kvstore-qa2.s.qima-inc.com:2379" total="false"/>
 
 
-    <dubbo:reference id="demoService" check="true"
+    <dubbo:reference id="demoService" check="true" protocol="dubbo"
                      interface="com.youzan.platform.demo.api.DemoService1" />
     <dubbo:consumer client="netty4" filter="-default"/>
 
