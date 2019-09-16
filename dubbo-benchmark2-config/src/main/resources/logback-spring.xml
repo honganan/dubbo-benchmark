@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+
+    <include resource="com/youzan/boot/logging/logback/youzan-base.xml" />
+    <include resource="com/youzan/boot/logging/logback/youzan-dubbo.xml" />
+    <include resource="com/youzan/boot/logging/logback/youzan-sql.xml" />
+
+    <logger name="com.youzan.dubbo.benchmark2" additivity="false">
+        <level value="info"/>
+        <appender-ref ref="ASYNC"/>
+        <appender-ref ref="CONSOLE" />
+        <appender-ref ref="ERROR"/>
+    </logger>
+
+
+
+</configuration>

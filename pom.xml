@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<parent>
+		<groupId>com.youzan.boot</groupId>
+		<artifactId>youzan-boot-parent</artifactId>
+		<version>2.0.25-RELEASE</version>
+		<relativePath/>
+	</parent>
+
+	<groupId>com.youzan</groupId>
+	<artifactId>dubbo-benchmark2</artifactId>
+	<version>1.0.0-SNAPSHOT</version>
+	<packaging>pom</packaging>
+
+	<name>dubbo-benchmark2</name>
+	<description>Demo project for Youzan Boot</description>
+
+	<properties>
+		<aladdin.version>1.2.8-RELEASE</aladdin.version>
+		<maven.aladdin.version>1.2.8-RELEASE</maven.aladdin.version>
+		<maven.surefire.version>2.23.1-RELEASE</maven.surefire.version>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+		<java.version>1.8</java.version>
+	</properties>
+
+	<modules>
+		<module>dubbo-benchmark2-api</module>
+		<module>dubbo-benchmark2-deploy</module>
+		<module>dubbo-benchmark2-domain</module>
+		<module>dubbo-benchmark2-biz</module>
+		<module>dubbo-benchmark2-dependency</module>
+		<module>dubbo-benchmark2-config</module>
+		<module>dubbo-benchmark2-web</module>
+	</modules>
+
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>com.youzan.aladdin</groupId>
+				<artifactId>container</artifactId>
+				<version>${aladdin.version}</version>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+
+	<build>
+		<pluginManagement>
+			<plugins>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-surefire-plugin</artifactId>
+					<version>${maven.surefire.version}</version>
+				</plugin>
+				<plugin>
+					<groupId>com.youzan.aladdin</groupId>
+					<artifactId>aladdin-maven-plugin</artifactId>
+					<version>${maven.aladdin.version}</version>
+				</plugin>
+			</plugins>
+		</pluginManagement>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-plugin</artifactId>
+			</plugin>
+		</plugins>
+	</build>
+
+</project>

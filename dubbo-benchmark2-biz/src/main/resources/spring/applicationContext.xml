@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns="http://www.springframework.org/schema/beans" xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/aop
+       http://www.springframework.org/schema/aop/spring-aop-3.0.xsd http://code.alibabatech.com/schema/dubbo http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
+
+
+    <dubbo:reference id="demoService" protocol="dubbo" check="false"
+                     interface="com.youzan.platform.demo.api.DemoService1" />
+
+    <dubbo:service interface="org.apache.dubbo.benchmark.api.service.UserService" ref="userService" filter="-default"/>
+    <bean id="userService" class="com.youzan.dubbo.benchmark2.biz.service.UserServiceServerImpl"/>
+</beans>

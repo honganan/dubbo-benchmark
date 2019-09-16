@@ -1,0 +1,5 @@
+WARN 2019-09-16 17:15:20:805 AladdinPluginServiceImpl :  rontgen apm won't init, to open it, set '-Dapplication.name' property 
+WARN 2019-09-16 17:15:20:946 HttpServerUtil :  httpServer /aladdin-jar  fail 
+WARN 2019-09-16 17:16:16:968 AladdinPluginServiceImpl :  rontgen apm won't init, to open it, set '-Dapplication.name' property 
+WARN 2019-09-16 17:16:17:069 HttpServerUtil :  httpServer /aladdin-jar  fail 
+WARN 2019-09-16 17:17:13:446 AladdinPluginServiceImpl :  rontgen apm won't init, to open it, set '-Dapplication.name' property 
