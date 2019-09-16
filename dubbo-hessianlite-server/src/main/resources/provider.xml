@@ -13,6 +13,6 @@
     <dubbo:consumer client="netty4" filter="-default"/>
 
 
-    <dubbo:service interface="org.apache.dubbo.benchmark.api.service.UserService" ref="userService" filter="-default"/>
-    <bean id="userService" class="org.apache.dubbo.benchmark.service.UserServiceServerImpl"/>
+    <!--<dubbo:service interface="org.apache.dubbo.benchmark.api.service.UserService" ref="userService" filter="-default"/>-->
+    <!--<bean id="userService" class="org.apache.dubbo.benchmark.service.UserServiceServerImpl"/>-->
 </beans>
