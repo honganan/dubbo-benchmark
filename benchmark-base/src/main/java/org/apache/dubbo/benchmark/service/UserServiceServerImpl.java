@@ -11,7 +11,6 @@ import org.apache.dubbo.benchmark.api.service.UserService;
 
 public class UserServiceServerImpl implements UserService {
 
-    @Resource
     private DemoService1 demoService;
 
     @Override
@@ -101,5 +100,12 @@ public class UserServiceServerImpl implements UserService {
 //        return true;
     }
 
+    public DemoService1 getDemoService() {
+        return demoService;
+    }
+
+    public void setDemoService(DemoService1 demoService) {
+        this.demoService = demoService;
+    }
 }
 
