@@ -8,7 +8,7 @@ public class Server {
 
     public static void main(String[] args) throws InterruptedException {
         AladdinContainer.run(args);
-        try (ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("provider.xml")) {
+        try (ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml")) {
             context.start();
             Thread.sleep(Integer.MAX_VALUE);
         }
