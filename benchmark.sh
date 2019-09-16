@@ -37,7 +37,7 @@ run() {
         JAR=`find ${PROJECT_DIR}/target/*.jar | head -n 1`
         echo
         echo "RUN ${PROJECT_DIR} IN ${MODE:-benchmark} MODE"
-        CMD="java ${JAVA_OPTIONS} -Dserver.host=${SERVER} -Dserver.port=${PORT} -Dbenchmark.output=${OUTPUT} -jar ${JAR} ${OTHERARGS}"
+        CMD="java ${JAVA_OPTIONS} -Dserver.host=${SERVER} -Dserver.port=${PORT} -Dapplication.name=BenchmarkDubbo -Dbenchmark.output=${OUTPUT} -jar ${JAR} ${OTHERARGS}"
         echo "command is: ${CMD}"
         echo
         ${CMD}
