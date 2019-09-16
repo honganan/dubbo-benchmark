@@ -1,5 +1,8 @@
 package org.apache.dubbo.benchmark;
 
+import java.io.IOException;
+import java.util.concurrent.TimeUnit;
+
 import org.apache.commons.cli.CommandLine;
 import org.apache.commons.cli.CommandLineParser;
 import org.apache.commons.cli.DefaultParser;
@@ -21,9 +24,6 @@ import org.openjdk.jmh.runner.options.Options;
 import org.openjdk.jmh.runner.options.OptionsBuilder;
 import org.openjdk.jmh.runner.options.TimeValue;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
-
-import java.io.IOException;
-import java.util.concurrent.TimeUnit;
 
 @State(Scope.Benchmark)
 public class Client extends AbstractClient {

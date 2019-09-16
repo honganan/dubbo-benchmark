@@ -34,7 +34,7 @@ java_options() {
 
 run() {
     if [ -d "${PROJECT_DIR}/target" ]; then
-        JAR=`find ${PROJECT_DIR}/target/*.jar | head -n 1`
+        JAR=`find ${PROJECT_DIR}/target/*SNAPSHOT.jar | head -n 1`
         echo
         echo "RUN ${PROJECT_DIR} IN ${MODE:-benchmark} MODE"
         CMD="java ${JAVA_OPTIONS} -Dserver.host=${SERVER} -Dserver.port=${PORT} -Dapplication.name=BenchmarkDubbo -Dbenchmark.output=${OUTPUT} -jar ${JAR} ${OTHERARGS}"
