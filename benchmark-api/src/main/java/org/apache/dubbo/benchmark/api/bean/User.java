@@ -1,4 +1,4 @@
-package org.apache.dubbo.benchmark.bean;
+package org.apache.dubbo.benchmark.api.bean;
 
 import java.io.Serializable;
 import java.time.LocalDate;

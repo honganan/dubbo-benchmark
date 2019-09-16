@@ -3,16 +3,10 @@ package org.apache.dubbo.benchmark.service;
 
 import com.youzan.platform.demo.api.DemoService1;
 
-import org.apache.dubbo.benchmark.bean.Page;
-import org.apache.dubbo.benchmark.bean.User;
+import org.apache.dubbo.benchmark.api.bean.Page;
+import org.apache.dubbo.benchmark.api.bean.User;
+import org.apache.dubbo.benchmark.api.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
-
-import java.time.LocalDate;
-import java.time.LocalDateTime;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-
 
 public class UserServiceServerImpl implements UserService {
 

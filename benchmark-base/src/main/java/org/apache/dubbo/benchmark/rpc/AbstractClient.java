@@ -1,8 +1,8 @@
 package org.apache.dubbo.benchmark.rpc;
 
-import org.apache.dubbo.benchmark.bean.Page;
-import org.apache.dubbo.benchmark.bean.User;
-import org.apache.dubbo.benchmark.service.UserService;
+import org.apache.dubbo.benchmark.api.bean.Page;
+import org.apache.dubbo.benchmark.api.bean.User;
+import org.apache.dubbo.benchmark.api.service.UserService;
 import org.apache.dubbo.benchmark.service.UserServiceServerImpl;
 
 import java.util.concurrent.atomic.AtomicInteger;

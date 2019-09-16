@@ -7,10 +7,10 @@
     <dubbo:application name="dubbo-fst-client"/>
     <!-- FIXME: need to investigate why serialization optimizer doesn't work -->
     <!--<dubbo:reference id="userService" check="false"-->
-                     <!--interface="org.apache.dubbo.benchmark.service.UserService"-->
+                     <!--interfaorg.apache.dubbo.benchmark.api.service.UserServicevice"-->
                      <!--url="dubbo://${server.host}:${server.port}?optimizer=org.apache.dubbo.benchmark.serialize.SerializationOptimizerImpl&amp;serialization=fst"/>-->
     <dubbo:reference id="userService" check="false"
-                     interface="org.apache.dubbo.benchmark.service.UserService"
+                     interface="org.apache.dubbo.benchmark.api.service.UserService"
                      url="dubbo://${server.host}:${server.port}?serialization=fst"/>
     <dubbo:consumer client="netty4" filter="-default"/>
 </beans>

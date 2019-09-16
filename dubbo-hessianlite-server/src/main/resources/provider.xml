@@ -7,6 +7,6 @@
     <dubbo:application name="BenchmarkDubbo"/>
     <dubbo:protocol name="dubbo" host="${server.host}" server="netty4" port="${server.port}"/>
     <!--<dubbo:registry address="N/A"/>-->
-    <dubbo:service interface="org.apache.dubbo.benchmark.service.UserService" ref="userService" filter="-default"/>
+    <dubbo:service interface="org.apache.dubbo.benchmark.api.service.UserService" ref="userService" filter="-default"/>
     <bean id="userService" class="org.apache.dubbo.benchmark.service.UserServiceServerImpl"/>
 </beans>

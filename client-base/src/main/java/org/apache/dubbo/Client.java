@@ -1,6 +1,6 @@
 package org.apache.dubbo;
 
-import org.apache.dubbo.benchmark.service.UserService;
+import org.apache.dubbo.benchmark.api.service.UserService;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class Client {
