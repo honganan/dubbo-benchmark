@@ -3,15 +3,16 @@ package org.apache.dubbo.benchmark.service;
 
 import com.youzan.platform.demo.api.DemoService1;
 
+import javax.annotation.Resource;
+
 import org.apache.dubbo.benchmark.api.bean.Page;
 import org.apache.dubbo.benchmark.api.bean.User;
 import org.apache.dubbo.benchmark.api.service.UserService;
-import org.springframework.beans.factory.annotation.Autowired;
 
 public class UserServiceServerImpl implements UserService {
 
-    @Autowired
-    private DemoService1 demoService1;
+    @Resource
+    private DemoService1 demoService;
 
     @Override
     public boolean existUser(String email) {
@@ -24,12 +25,12 @@ public class UserServiceServerImpl implements UserService {
 //        }
 //
 //        return true;
-        return demoService1.existUser(email);
+        return demoService.existUser(email);
     }
 
     @Override
     public User getUser(long id) {
-        return demoService1.getUser(id);
+        return demoService.getUser(id);
 
 //        User user = new User();
 //
@@ -55,7 +56,7 @@ public class UserServiceServerImpl implements UserService {
 
     @Override
     public Page<User> listUser(int pageNo) {
-        return demoService1.listUser(pageNo);
+        return demoService.listUser(pageNo);
 //
 //        List<User> userList = new ArrayList<>(15);
 //
@@ -91,7 +92,7 @@ public class UserServiceServerImpl implements UserService {
 
     @Override
     public boolean createUser(User user) {
-        return demoService1.createUser(user);
+        return demoService.createUser(user);
 
 //        if (user == null) {
 //            return false;
