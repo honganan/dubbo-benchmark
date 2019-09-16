@@ -3,23 +3,11 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
        xmlns:context="http://www.springframework.org/schema/context"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://code.alibabatech.com/schema/dubbo http://code.alibabatech.com/schema/dubbo/dubbo.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
-
     <context:property-placeholder location="classpath:benchmark.properties" system-properties-mode="OVERRIDE"/>
-    <!--<dubbo:application name="BenchmarkDubbo"/>-->
-    <!--<dubbo:protocol name="dubbo" host="${server.host}" server="netty4" port="${server.port}"/>-->
-    <dubbo:registry protocol="etcd3" address="etcd-kvstore-qa0.s.qima-inc.com:2379,etcd-kvstore-qa1.s.qima-inc.com:2379,etcd-kvstore-qa2.s.qima-inc.com:2379" total="false"/>
-    <dubbo:reference id="demoService" check="true"
-                     interface="com.youzan.platform.demo.api.DemoService1" />
-    <dubbo:consumer client="netty4" filter="-default"/>
-
-
-
 
     <dubbo:protocol name="dubbo" host="${server.host}" server="netty4" port="${server.port}"/>
     <!--<dubbo:registry address="N/A"/>-->
-    <dubbo:registry protocol="etcd3" address="etcd-kvstore-qa0.s.qima-inc.com:2379,etcd-kvstore-qa1.s.qima-inc.com:2379,etcd-kvstore-qa2.s.qima-inc.com:2379" total="false"/>
+    <dubbo:registry protocol="etcd3" address="etcd-kvstore-qa0.s.qima-inc.com:2379,etcd-kvstore-qa1.s.qima-inc.com:2379,etcd-kvstore-qa2.s.qima-inc.com:2379" total=""/>
     <dubbo:service interface="org.apache.dubbo.benchmark.api.service.UserService" ref="userService" filter="-default"/>
-    <bean id="userService" class="org.apache.dubbo.benchmark.service.UserServiceServerImpl">
-        <property name="demoService" ref="demoService" />
-    </bean>
+    <bean id="userService" class="org.apache.dubbo.benchmark.service.UserServiceServerImpl"/>
 </beans>

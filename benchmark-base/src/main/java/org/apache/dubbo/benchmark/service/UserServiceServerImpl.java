@@ -8,8 +8,11 @@ import javax.annotation.Resource;
 import org.apache.dubbo.benchmark.api.bean.Page;
 import org.apache.dubbo.benchmark.api.bean.User;
 import org.apache.dubbo.benchmark.api.service.UserService;
+import org.springframework.beans.BeansException;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.ApplicationContextAware;
 
-public class UserServiceServerImpl implements UserService {
+public class UserServiceServerImpl implements UserService, ApplicationContextAware {
 
     private DemoService1 demoService;
 
@@ -106,6 +109,11 @@ public class UserServiceServerImpl implements UserService {
 
     public void setDemoService(DemoService1 demoService) {
         this.demoService = demoService;
+    }
+
+    @Override
+    public void setApplicationContext(ApplicationContext applicationContext) throws BeansException {
+        demoService = (DemoService1) applicationContext.getBean("demoService");
     }
 }
 
