@@ -8,5 +8,5 @@
     <dubbo:registry protocol="etcd3" address="etcd-kvstore-qa0.s.qima-inc.com:2379,etcd-kvstore-qa1.s.qima-inc.com:2379,etcd-kvstore-qa2.s.qima-inc.com:2379"/>
     <dubbo:reference id="userService" check="false" protocol="dubbo"
                      interface="org.apache.dubbo.benchmark.api.service.UserService" />
-    <dubbo:consumer client="netty4" filter="-default"/>
+    <dubbo:consumer client="netty4" />
 </beans>
